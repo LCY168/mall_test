@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        html,body{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid h-100" style="background-size: 100% 100%; background-attachment: fixed; margin: 0px;  background-image: url(https://www.ptu.edu.cn/jwc/images/2.jpg)" >
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="card col-4">
+            <div class="card-header">
+                登录
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">手机号码</label>
+                        <input type="number" class="form-control" id="phone">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">密码</label>
+                        <input type="password" class="form-control" id="password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="verifyCode" class="form-label">验证码</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="verifyCode">
+                            <span class="input-group-append">
+                                    <img id="captcha" src="/common/captcha" alt="captcha" onclick="$('#captcha').attr('src','/common/captcha')">  <!--此处路径你看看你的验证码是怎么搞的-->
+                                </span>
+                        </div>
+                    </div>
+                    <a href="register.html" class="btn btn-secondary">注册</a>
+                    <button type="submit" class="btn btn-primary">登录</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<!--    &lt;!&ndash;clocktest&ndash;&gt;
+
+    <canvas id="sample" width="150" height="150"></canvas>-->
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script>
+    $(function () {
+        $('form').submit(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: '/user/login',
+                type: 'post',
+                data: {
+                    phone: $('#phone').val(),
+                    password: $('#password').val(),
+                    verifyCode: $('#verifyCode').val()
+                },
+                success:function (data) {
+                    if (data.code === 200){
+                        window.location.href = '/shopcart.html';
+                    }else {
+                        alert(data.message);
+                    }
+                }
+            });
+        });
+    });
+</script>
+<!--
+
+
+clocktest
+<style>
+    canvas{
+        border: 1px solid black;
+    }
+</style>
+-->
+<!--<script>
+    (function(){
+        //cavas元素对象
+        var canvas=null;
+        //canvas的3d上下文
+        var ctx=null;
+        //cavan的尺寸
+        var cw=0;
+        var ch=0;
+        /**
+         * 页面导入时的事件处理
+         */
+        window.addEventListener("load",function(){
+            canvas=document.getElementById("sample");
+            ctx=canvas.getContext("2d");
+            cw=parseInt(canvas.width);
+            ch=parseInt(canvas.height);
+
+            ctx.translate(cw/2, ch/2);
+
+            //绘制时钟
+            draw_watch();
+        },false);
+
+
+        /**
+         * 绘制时钟
+         */
+        function draw_watch(){
+            //清空Canvas
+            ctx.clearRect(-cw/2,-ch/2,cw,ch);
+            //计算针的最大长度
+            var len=Math.min(cw, ch)/2;
+            //绘制刻度盘
+            var tlen=len*0.85;
+            ctx.font="14px 'Arial'";
+            ctx.fillStyle="black";
+            ctx.textAlign="center";
+            ctx.textBaseLine="middle";
+
+            for(var i=1; i<=12; i++){
+                var tag1=Math.PI*2*(3-i)/12;
+                var tx=tlen * Math.cos(tag1);
+                var ty=-tlen * Math.sin(tag1);
+                ctx.fillText(i,tx,ty);
+            }
+            //获取当前的时分秒
+            var d=new Date();
+            var h=d.getHours();
+            var m=d.getMinutes();
+            var s=d.getSeconds();
+            if(h >12 ){
+                h=h-12;
+            }
+
+            //绘制时针
+            var angle1 = Math.PI * 2 *(3 - (h+ m/60))/12;
+            var length1=len * 0.5;
+            var width1=5;
+            var color1="#000000";
+            drawhand(angle1,length1,width1,color1);
+
+            //绘制分针
+            var angle2 = Math.PI * 2 *(15 - (m+ s/60))/60;
+            var length2=len * 0.7;
+            var width2=3;
+            var color2="#555555";
+            drawhand(angle2,length2,width2,color2);
+
+            //绘制秒针
+            var angle3 = Math.PI * 2 *(15 - s)/60;
+            var length3=len * 0.8;
+            var width3=1;
+            var color3="#aa0000";
+            drawhand(angle3,length3,width3,color3);
+
+            //设置timer
+            setTimeout(draw_watch,1000);
+        }
+        /**
+         * 针绘制函数
+         */
+
+        function drawhand(angle,len,width,color){
+            //计算针端的坐标
+            var x=len*Math.cos(angle);
+            var y=-len * Math.sin(angle);
+            //绘制针
+            ctx.strokeStyle=color;
+            ctx.lineWidth=width;
+            ctx.lineCap="round";
+            ctx.beginPath();
+            ctx.moveTo(0,0);
+            ctx.lineTo(x,y);
+            ctx.stroke();
+
+        }
+    })();
+</script>-->
+
+</body>
+</html>

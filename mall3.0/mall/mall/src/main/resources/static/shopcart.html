@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./bootstrap/bootstrap-4.6.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./bootstrap/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/shopcart.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./bootstrap/bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/shopcart.js"></script>
+    <title>购物车</title>
+</head>
+<body class="index">
+<!-- 首页 顶端 -->
+    <div class="top">
+        <div class="inner-top w">
+            <div class="fl">
+                <a href="index.html">首页</a>
+            </div>
+            <ul class="fr">
+                <li id="nickName"><a href="login.html">你好,请登录!</a></li>
+                <li class="spacer"></li>
+                <li><a class="style-red" href="java:;">手机APP</a></li>
+                <li class="spacer"></li>
+                <li><a href="javas:;">网络无障碍</a></li>
+            </ul>
+            <div class="cls"></div>
+        </div>
+    </div>
+
+    <!-- 首页 头部搜索部分-->
+    <div class="header">
+        <div class="w header-body">
+            <div class="hb1">
+                <img src="./imgs/school.png" alt="学校图标">
+            </div>
+            <!-- 父相子绝 -->
+            <div class="hb2">
+                <div class="seachbody">
+                    <input type="text" class="search_m" placeholder="搜你所想...">
+                    <button>
+                        <i class="bi bi-search seach-icon"></i>
+                    </button>
+                    <div class="search_t">
+                        <ul>
+                            <li><a href="">端午</a></li>
+                            <li><a href="">手机</a></li>
+                            <li><a href="">鞋子</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="hb3"></div>
+        </div>
+    </div>
+    <!-- 未登录界面 -->
+    <div class="w" id="cartNoLogin">
+        <a href="login.html">请先登录！</a>
+        <br>
+        <br>
+        <br><br><br><br><br><br><br> <br><br><br><br><br><br>
+        <br>
+    </div>
+
+    <!-- 登录显示的界面 -->
+    <div class="w" id="cartLogin">
+        <div class="cartd1">
+            全部商品
+        </div>
+        <div class="cartd2">
+            <ul class="cartul1">
+                <li class="cartli1">
+                    <div class="cartd3">
+                        <input type="checkbox" onclick="checkAll()" id="sela">&nbsp;&nbsp;全选
+                    </div>
+                </li>
+                <li class="cartli2">商品</li>
+                <li class="cartli3">单价</li>
+                <li class="cartli4">数量</li>
+                <li class="cartli5">小计</li>
+                <li class="cartli6">操作</li>
+            </ul>
+        </div>
+        <div id="cartgoodlist">
+
+        </div>
+        <div class="cartd6">
+            <button id="prePage">上一页</button>
+            <button id="nextPage">下一页</button>
+        </div>
+        <div>
+            <div class="fr">
+                <ul class="cartul3">
+                    <li>已选择<span id="totalNum">0</span>件商品</li>
+                    <li>总价:￥<span id="totalPrice">0</span></li>
+                    <li>
+                        <button class="btt">去结算</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="cls"></div>
+        </div>
+    </div>
+
+
+    <div class="position-fixed bottom-0 right-0 p-3" style="z-index: 5; right: 45%; bottom: 50%;">
+        <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="4000">
+            <div class="toast-header">
+                <strong class="mr-auto">提示</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body" id="messagetoast" style="height: 80px;width: 280px">
+
+            </div>
+        </div>
+    </div>
+
+<!--页脚-->
+<div class="container-fluid" style="padding-top: 40px;">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="jumbotron" style="background:#A9A9A9">
+                <div class="container" >
+                    <center>
+                        <div  class="col-md-12 column"  ><img src="https://www.ptu.edu.cn/images/20/07/15/13t7y035gf/logo.png" alt="ptulogo"></div>
+                        <p>Copyright© 2024 All Rights Reserved. </p>
+                        <p>莆田学院--新工科产业学院</p>
+                        <p>学院地址：福建省莆田市荔城区西天尾镇紫霄东路2121号（紫霄校区） 福建省莆田市城厢区学园中街1133号（学园校区）</p>
+                        <p>中文域名：莆田学院.公益   邮编：351100 校办电话：0594-2671122（紫霄校区）传真：0594-2697878</p>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

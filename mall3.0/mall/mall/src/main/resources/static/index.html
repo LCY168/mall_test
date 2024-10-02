@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./bootstrap/bootstrap-4.6.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./bootstrap/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./bootstrap/bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+    <title>商场首页</title>
+</head>
+<body class="index">
+    <!-- 首页 顶端 -->
+    <div class="top">
+        <div class="inner-top w">
+            <div class="fl">
+                <a href="index.html">首页</a>
+            </div>
+            <ul class="fr">
+                <li id="nickName"><a href="loginUser.html">你好,请登录!</a></li>
+                <li class="spacer"></li>
+                <li><a class="style-red" href="java:;">手机APP</a></li>
+                <li class="spacer"></li>
+                <li><a href="login.html">后台管理登录</a></li>
+            </ul>
+            <div class="cls"></div>
+        </div>
+    </div>
+
+
+    <!-- 首页 头部搜索部分-->
+    <div class="header">
+        <div class="w header-body">
+            <div class="hb1">
+                <img src="./imgs/school.png" alt="学校图标">
+            </div>
+            <!-- 父相子绝 -->
+            <div class="hb2">
+                <div class="seachbody">
+                    <input type="text" class="search_m" placeholder="搜你所想...">
+                    <button>
+                        <i class="bi bi-search seach-icon" onclick="search()"></i>
+                    </button>
+                    <div class="search_t">
+                        <ul>
+                            <li><a href="">端午</a></li>
+                            <li><a href="">手机</a></li>
+                            <li><a href="">鞋子</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="shortcart">
+                    <i class="bi bi-cart3"></i>
+                <!--    <div id="cartnum">0</div>-->
+                    <a href="shopcart.html">我的购物车</a>
+                </div>
+            </div>
+            <div class="hb3"></div>
+        </div>
+    </div>
+
+    <!-- 首页 轮播部分 -->
+    <div class="mid-swiper w">
+        <div id="cg_p">
+
+        </div>
+        <!--轮播图-->
+        <div id="sw_p">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" style="height: 470px">
+
+                <div class="carousel-inner">
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 首页 商品列表部分 -->
+    <div class="w" id="goodlist">
+        <div class="cc">
+
+        </div>
+    </div>
+    <!--页脚-->
+    <div class="container-fluid" style="padding-top: 40px;">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="jumbotron" style="background:#A9A9A9">
+                    <div class="container" >
+                        <center>
+                            <div  class="col-md-12 column"  ><img src="https://www.ptu.edu.cn/images/20/07/15/13t7y035gf/logo.png" alt="ptulogo"></div>
+                            <p>Copyright© 2024 All Rights Reserved. </p>
+                            <p>莆田学院--新工科产业学院</p>
+                            <p>学院地址：福建省莆田市荔城区西天尾镇紫霄东路2121号（紫霄校区） 福建省莆田市城厢区学园中街1133号（学园校区）</p>
+                            <p>中文域名：莆田学院.公益   邮编：351100 校办电话：0594-2671122（紫霄校区）传真：0594-2697878</p>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

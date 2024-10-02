@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>制作商品详情页面</title>
+    <link rel="stylesheet" href="./bootstrap/bootstrap-4.6.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./bootstrap/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/goodDetail.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="top">
+    <div class="inner-top w">
+        <div class="fl">
+            <a href="index.html">首页</a>
+        </div>
+        <ol class="fr">
+            <li id="nickName"><a href="loginUser.html">你好,请登录!</a></li>
+            <li class="spacer"></li>
+            <li><a class="style-red" href="java:;">手机APP</a></li>
+            <li class="spacer"></li>
+            <li><a href="login.html">后台管理登录</a></li>
+        </ol>
+        <div class="cls"></div>
+    </div>
+</div>
+
+
+<!-- 首页 头部搜索部分-->
+<div class="header">
+    <div class="w header-body">
+        <div class="hb1">
+            <img src="./imgs/school.png" alt="学校图标">
+        </div>
+        <!-- 父相子绝 -->
+        <div class="hb2">
+            <div class="seachbody">
+                <input type="text" class="search_m" placeholder="搜你所想...">
+                <button>
+                    <i class="bi bi-search seach-icon"></i>
+                </button>
+                <div class="search_t">
+                    <ul>
+                        <li><a href="">端午</a></li>
+                        <li><a href="">手机</a></li>
+                        <li><a href="">鞋子</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="shortcart">
+                <i class="bi bi-cart3"></i>
+                <div id="cartnum">0</div>
+                <a href="shopcart.html">我的购物车</a>
+            </div>
+        </div>
+        <div class="hb3"></div>
+    </div>
+</div>
+
+    <div class="mr-cont" id="getProd">
+
+    </div>
+</body>
+
+</html>
+<style>
+ 
+
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0
+}
+.mr-cont {
+	margin: 20px auto;
+	height: 565px;
+	width: 950px;
+	border: 1px solid #F00
+}
+.mr-pic {
+	float: left;
+	margin: 50px auto
+}
+.mr-mess {
+	float: left;
+	width: 528px;
+	margin: 30px 20px;
+}
+dl {
+	margin: 20px;
+	text-align: center;
+	width: 340px;
+	height: 435px;
+	border: 1px #999999 solid
+}
+dt {
+	margin-top: 10px;
+}
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+dd {
+	float: left;
+	margin: 30px 5px;
+	border: 1px solid #CCC;
+}
+.mr-sel {
+	margin-left: 50px;
+	border: 1px solid #C00;
+}
+ul li {
+	list-style: none;
+	float: left;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+}
+.list1~li {
+	width: 120px;
+	border: 1px dashed #999999;
+	margin: 0 5px;
+}
+.mr-price {
+	background: #FBECFF
+}
+.dul ul{
+	margin:0px auto;
+}
+</style>
